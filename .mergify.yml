@@ -5,3 +5,13 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+- name: Backmerge from master when the author is trusted. 
+actions:    
+   backport:      
+     regexes:      
+     - (^develop$)|(^hotfix\/(.+)$)|(^release\/(.+)$) 
+conditions:
+  - closed 
+  - merged 
+  - author~=(^danielrayar$)|(^dependabot.*$)|(^mergify.*$) 
+  - base=master
