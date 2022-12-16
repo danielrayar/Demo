@@ -14,4 +14,4 @@ pull_request_rules:
     - closed 
     - merged 
     - author~=(^danielrayar$)|(^dependabot.*$)|(^mergify.*$) 
-    - base=master
+    - base=main
